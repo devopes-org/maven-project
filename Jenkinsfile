@@ -12,10 +12,20 @@ stage ('build the code')
 { sh 'mvn package' }
   
 }}
+//terraform and ansible stages to automate instance
+stage('deploy to dev') 
+{
+  steps
+  {
+    sshagent(['tomcat-pipeline'])
+    {sh 'scp -o StrictHostKeyChecking=no **/*.war ec2-user@172.31.0.188:/usr/share/tomcat/webapps'}
+    }
+}
+
 
 }
 
-}                    
+                   
 
 
 
