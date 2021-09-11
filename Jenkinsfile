@@ -5,6 +5,7 @@ pipeline
   {
       stage('scm checkout')
     {steps { git branch: 'master' , url: 'https://github.com/devopes-org/maven-project'}}
+<<<<<<< HEAD
 
 
 stage ('build the code')
@@ -20,3 +21,10 @@ stage ('build the code')
 
 
 
+=======
+
+}
+    
+
+}
+>>>>>>> e9dd037b6575f226160b18fb3c02dfe8a378abfe
