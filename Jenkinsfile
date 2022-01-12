@@ -11,13 +11,10 @@ stage('build the code')
  {sh 'mvn package'}
         } }
  
-{
+ stage('deploy to dev')
+    {
     steps
     {
     sh scp -o  StrictHostKeyChecking=no src=**/*.war dest=192.168.227.206:/usr/share/tomcat/webapps
     }
     }
-}
-}
-
-
