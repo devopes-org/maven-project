@@ -15,6 +15,5 @@ stage('build the code')
     {
     steps
     {
-    }sh scp -o  StrictHostKeyChecking=no **/*.war 3.69.53.251:/usr/share/tomcat/webapps
-    }
+     {sh 'scp -o  StrictHostKeyChecking=no *target/*.war 3.69.53.251:/usr/share/tomcat/webapps'}
     }
